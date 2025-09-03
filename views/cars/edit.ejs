@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <title>Edit <%= car.name %>
+    </title>
+</head>
+
+<body>
+    <!-- update the header -->
+    <h1>Edit <%= car.name %>
+    </h1>
+    <form action="/cars/<%=car._id%>?_method=PUT" method="POST">
+        <label for="name">car Name:</label>
+        <input type="text" name="name" value="<%= car.name%>" />
+
+        <label for="name">Model:</label>
+        <input type="text" name="model" value="<%= car.model%>" />
+
+        <label for="color">Color:</label>
+        <input type="text" name="color" value="<%= car.color%>" />
+
+        <label for="year">Year:</label>
+        <input type="text" name="year" value="<%= car.year%>" />
+
+        <label for="price">Price:</label>
+        <input type="text" name="Price" value="<%= car.Price%>" />
+        <label for="description">Description:</label>
+    <textarea name="description" rows="4"><%= car.description%></textarea>
+
+        <div class="checkbox-id">
+            <label for="isFavorite">Verified Listing?</label>
+            <input type="checkbox" name="isFavorite" id="isFavorite" <% if(car.isFavorite) { %>checkes<%}%> />
+        </div>
+        <!-- update the button text -->
+        <button type="submit">Update Business</button>
+    </form>
+
+    <a class="businesses-index-link" href="/cars">
+        <div class="index-link-text">Back to All Businesses</div>
+    </a>
+</body>
+
+</html>

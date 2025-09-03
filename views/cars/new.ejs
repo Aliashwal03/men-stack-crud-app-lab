@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/stylesheet/style.css">
+  <title>Add New Car</title>
+</head>
+
+<body>
+  <h1>Add New Car</h1>
+
+  <form action="/cars" method="POST">
+    <label for="name">Car Name:</label>
+    <input type="text" name="name" id="name">
+
+    <label for="model">Car Model:</label>
+    <input type="text" name="model" id="model">
+
+    <label for="color">Car Color:</label>
+    <input type="text" name="color" id="color">
+
+    <label for="year">Year:</label>
+    <input type="text" name="year" id="year">
+
+    <label for="price">Price:</label>
+    <input type="text" name="price" id="price">
+
+    <label for="description">Description:</label>
+    <textarea name="description" id="description"></textarea>
+
+    <div class="checkbox-div">
+      <label for="isFavorite">Favorite:</label>
+      <input type="checkbox" name="isFavorite" id="isFavorite">
+    </div>
+
+    <button type="submit">Add Car</button>
+  </form>
+
+</body>
+
+</html>

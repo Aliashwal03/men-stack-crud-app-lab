@@ -1,0 +1,42 @@
+<!-- views/cars/show.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <title><%= foundCar.name %></title>
+</head>
+
+<body>
+  <h1><%= foundCar.name %></h1>
+
+  <% if (foundCar.isFavorite) { %>
+    <p>✅ Favorite</p>
+  <% } %>
+
+  <p><strong>Model:</strong> <%= foundCar.model %></p>
+  <p><strong>Make:</strong> <%= foundCar.make %></p>
+  <p><strong>Color:</strong> <%= foundCar.color %></p>
+  <p><strong>Year:</strong> <%= foundCar.year %></p>
+  <p><strong>Price:</strong> <%= foundCar.price %></p>
+  <p><strong>Description:</strong> <%= foundCar.description %></p>
+
+  <div class="actions">
+    <form action="/cars/<%= foundCar._id %>?_method=DELETE" method="POST">
+      <button class="delete-button" type="submit">Delete <%= foundCar.name %></button>
+    </form>
+  </div>
+
+  <a class="edit-link" href="/cars/<%= foundCar._id %>/edit">
+    <div class="edit-text">Edit <%= foundCar.name %></div>
+  </a>
+
+  <a class="car-index-link" href="/cars">
+    <div class="index-link-text">Back to All Cars</div>
+  </a>
+</body>
+
+</html>

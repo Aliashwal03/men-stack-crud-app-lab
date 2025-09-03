@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheet/style.css">
+    <title>view All Car</title>
+</head>
+
+<body>
+
+    <h1> All Cars</h1>
+    <a href="/cars/new" class="add-cars">Add Car</a>
+    <ul>
+
+        <% allCar.forEach(car=> { %>
+            <li>
+                <h2>
+                    <a href="/cars/<%= car._id %>">
+                        <%= car.name %>
+                    </a>
+                    <% if (car.isFavorite) { %>
+                        ✅
+                        <% } %>
+                </h2>
+                <p><strong>Model:</strong>
+                    <%= car.model %>
+                </p>
+                <p><strong>Make:</strong>
+                    <%= car.make %>
+                </p>
+                <p><strong>Color:</strong>
+                    <%= car.color %>
+                </p>
+                <p><strong>Year:</strong>
+                    <%= car.year %>
+                </p>
+                <p><strong>Price:</strong>
+                    <%= car.price %>
+                </p>
+                <p><strong>Description:</strong>
+                    <%= car.description %>
+                </p>
+                <hr />
+            </li>
+            <% }) %>
+    </ul>
+</body>
+
+</html>
